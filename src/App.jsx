@@ -5,6 +5,7 @@ import OurServices from "./pages/OurServices"
 import RegistrationForm from "./pages/registrationForm"
 import Navbar from "./components/NavBar"
 import Ob from "./components/Objetives"
+import Home  from "./pages/Home"
 function App() {
   return (
     <>
@@ -12,10 +13,11 @@ function App() {
       {/* <AboutUs /> */}
       {/* <OurServices /> */}
 
-      <Navbar />
-      <Ob />
+      {/*<Navbar />*/}
+      {/*<Ob />
       <RegistrationForm />
-      <Footer />
+      <Footer />*/}
+      <Home />
     </>
   )
 }
