@@ -6,6 +6,8 @@ import RegistrationForm from "./pages/registrationForm"
 import Navbar from "./components/NavBar"
 import Ob from "./components/Objetives"
 import Home  from "./pages/Home"
+
+
 function App() {
   return (
     <>
