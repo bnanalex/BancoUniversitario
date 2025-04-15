@@ -4,6 +4,7 @@ import Menu from "./components/Menu"
 import OurServices from "./pages/OurServices"
 import RegistrationForm from "./pages/registrationForm"
 import Navbar from "./components/NavBar"
+import Ob from "./components/Objetives"
 function App() {
   return (
     <>
@@ -12,6 +13,7 @@ function App() {
       {/* <OurServices /> */}
 
       <Navbar />
+      <Ob />
       <RegistrationForm />
       <Footer />
     </>
