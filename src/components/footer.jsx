@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../assets/images/home/logo-banco-universitario-no-background.png';
+import logo from '../assets/images/home/Logo letras blancas.png';
 import facebookIcon from '../assets/icons/facebook-brands.svg';
 import instagramIcon from '../assets/icons/instagram-brands.svg';
 
