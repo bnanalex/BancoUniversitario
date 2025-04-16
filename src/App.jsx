@@ -1,10 +1,5 @@
-import Footer from "./components/footer"
-import AboutUs from "./pages/aboutUs"
-import Menu from "./components/Menu"
-import OurServices from "./pages/OurServices"
-import RegistrationForm from "./pages/registrationForm"
-import Navbar from "./components/NavBar"
-import Ob from "./components/Objetives"
+import React from "react"
+{/*import RegistrationForm from "./pages/registrationForm"*/}
 import Home  from "./pages/Home"
 function App() {
   return (

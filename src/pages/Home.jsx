@@ -2,8 +2,9 @@ import React from "react"
 import Navbar from "../components/NavBar"   
 import Ob from "../components/Objetives"
 import Footer from "../components/footer"   
-import AboutUs from "./aboutUs"
-import OurServices from "./OurServices"
+import AboutUs from "../components/aboutUs" ;
+import OurServices from "../components/OurServices"
+import HeroSection from "../components/HeroSection"
 
 const Home = () => {
     return (
@@ -15,6 +16,9 @@ const Home = () => {
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           
           {/* Sección Servicios */}
+          <section className="mb-20">
+            <HeroSection />
+          </section>
 
           {/* Sección Servicios */}
           <section className="mb-20">
