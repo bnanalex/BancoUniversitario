@@ -1,6 +1,6 @@
-import Hero from '../assets/images/home/foto home proyecto lab II (1).png';
+import Hero from '../assets/images/services/Services Hero Section.png';
  
- const HeroSection = () => {
+ const HeroSectionServices = () => {
    return (
      <section className="bg-gray-50 box-border py-[25px] px-[0%] [@media(max-width:1200px)]:py-[20px] [@media(max-width:1200px)]:px-[0%] [@media(max-width:768px)]:py-[15px] [@media(max-width:768px)]:px-[0px] [@media(max-width:480px)]:py-[10px] [@media(max-width:480px)]:px-[0px]">
        <div className="flex flex-col items-center max-w-[1200px] mx-auto">
@@ -19,4 +19,4 @@ import Hero from '../assets/images/home/foto home proyecto lab II (1).png';
    );
  };
  
- export default HeroSection;
+ export default HeroSectionServices;
