@@ -1,6 +1,7 @@
 import React from "react"
 {/*import RegistrationForm from "./pages/registrationForm"*/}
 import Home  from "./pages/Home"
+import Services from "./pages/Services"
 function App() {
   return (
     <>
@@ -12,7 +13,8 @@ function App() {
       {/*<Ob />
       <RegistrationForm />
       <Footer />*/}
-      <Home />
+      {/*<Home />*/}
+      <Services />
     </>
   )
 }
