@@ -4,6 +4,7 @@ import HeroSection from "../components/HeroSectionHome"
 import ServicesSection from "../components/ServiceSection"
 import AboutUs from "../components/aboutUs" ;
 import Ob from "../components/Objetives"
+import MisionVision from "../components/MisionVision";
 import Footer from "../components/footer"   
 const Home = () => {
     return (
@@ -30,9 +31,14 @@ const Home = () => {
           <section className="mb-20">
             <Ob/>
           </section>
+
+          {/* Sección Mision Vision */}
+            <section className="mb-20">
+            <MisionVision/>
+          </section>
   
           {/* Sección Contacto */}
-          <section className="mb-20">
+          <section>
             <Footer />
           </section>
   
