@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import MenuIcon from '../assets/icons/menu-vr-svg.svg';
 import Logo from '../assets/images/home/logo-banco-universitario-no-background.png';
 import Menu from './Menu';
