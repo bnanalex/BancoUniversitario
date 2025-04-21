@@ -1,7 +1,6 @@
 import React from "react"
 {/*import RegistrationForm from "./pages/registrationForm"*/}
 import Home  from "./pages/Home"
-import Services from "./pages/Services"
 function App() {
   return (
     <>
@@ -14,7 +13,8 @@ function App() {
       <RegistrationForm />
       <Footer />*/}
       {/*<Home />*/}
-      <Services />
+      {/*<Services />*/}
+      <Home />
     </>
   )
 }

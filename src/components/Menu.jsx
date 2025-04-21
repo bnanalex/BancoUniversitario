@@ -1,18 +1,16 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import logo from '../assets/images/home/Logo letras blancas.png';
 import facebookIcon from '../assets/icons/facebook-brands.svg';
 import instagramIcon from '../assets/icons/instagram-brands.svg';
 import twitterIcon from '../assets/icons/square-x-twitter-brands.svg';
+import BancaLineaNoti from './Notifications/BancaEnLinea';
 
 function Menu({ onClose }) {
   const menuRef = useRef(null);
+  const [showNotification, setShowNotification] = useState(false);
 
-  // Cerrar al hacer scroll
   useEffect(() => {
-    const handleScroll = () => {
-      onClose();
-    };
-
+    const handleScroll = () => onClose();
     const handleClickOutside = (event) => {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
         onClose();
@@ -21,7 +19,6 @@ function Menu({ onClose }) {
 
     window.addEventListener('scroll', handleScroll);
     document.addEventListener('mousedown', handleClickOutside);
-
     return () => {
       window.removeEventListener('scroll', handleScroll);
       document.removeEventListener('mousedown', handleClickOutside);
@@ -42,22 +39,27 @@ function Menu({ onClose }) {
         <div className="space-y-4">
           <button className="bg-white text-teal-800 w-full py-2 rounded-md font-semibold hover:bg-gray-200">Inicio</button>
           <button className="bg-white text-teal-800 w-full py-2 rounded-md font-semibold hover:bg-gray-200">Inicio De Sesión</button>
-          <button className="bg-white text-teal-800 w-full py-2 rounded-md font-semibold hover:bg-gray-200">Banca En Linea</button>
+          <button
+            className="bg-white text-teal-800 w-full py-2 rounded-md font-semibold hover:bg-gray-200"
+            onClick={() => setShowNotification(true)}
+          >
+            Banca En Linea
+          </button>
           <button className="bg-white text-teal-800 w-full py-2 rounded-md font-semibold hover:bg-gray-200">Servicios</button>
         </div>
 
         <div className="mt-8 text-sm border-t border-white/20 pt-4">
           <p className="text-xl font-semibold text-center mb-4">Redes Sociales:</p>
           <div className="flex flex-col items-start space-y-2">
-            <a href="https://www.facebook.com/bancouniversitariove" className="flex items-center">
+            <a href="#" className="flex items-center">
               <img src={facebookIcon} alt="Facebook" className="h-6 mr-2" />
               @bancouniversitariove
             </a>
-            <a href="https://www.instagram.com/bancouniversitariove" className="flex items-center">
+            <a href="#" className="flex items-center">
               <img src={instagramIcon} alt="Instagram" className="h-6 mr-2" />
               @bancouniversitariove
             </a>
-            <a href="https://twitter.com/bancouniversitariove" className="flex items-center">
+            <a href="#" className="flex items-center">
               <img src={twitterIcon} alt="Twitter" className="h-6 mr-2" />
               @bancouniversitariove
             </a>
@@ -68,6 +70,12 @@ function Menu({ onClose }) {
           <img src={logo} alt="Logo Banco Universitario" className="h-12" />
         </div>
       </div>
+
+      {/* Notificación modal */}
+      <BancaLineaNoti
+        isVisible={showNotification}
+        onClose={() => setShowNotification(false)}
+      />
     </>
   );
 }
