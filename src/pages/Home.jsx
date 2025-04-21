@@ -13,7 +13,7 @@ const Home = () => {
         <Navbar />
         {/* Main Content */}          
           {/* Sección Foto Principal */}
-          <section className="mb-20">
+          <section>
             <HeroSection />
           </section>
 

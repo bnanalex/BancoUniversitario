@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import sideImage from '../assets/images/home/services-web.jpg';
+import sideImage from '../assets/images/registerLogin/man-showing-calculator.jpg';
 import logo from '../assets/images/home/logo-banco-universitario-no-background.png';
 
 function RegistrationForm() {

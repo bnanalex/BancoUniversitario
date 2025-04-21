@@ -11,13 +11,13 @@ function App() {
     <Router>
       <Routes>
         {/* Página principal */}
-        <Route path="/services" element={<Home />} />
+        <Route path="/" element={<Home />} />
 
         {/* Página de Login/Registro */}
         <Route path="/login" element={<Form />} />
 
         {/* Página de Servicio */}
-        <Route path="/" element={<Services />} />
+        <Route path="/services" element={<Services />} />
       </Routes>
     </Router>
   );
