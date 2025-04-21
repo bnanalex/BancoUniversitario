@@ -1,20 +1,20 @@
 import React from "react";
 import Navbar from "../components/NavBar";
 import OurServices from "../components/OurServices";
-import Footer from "../components/footer";
+import Footer from "../components/footer"; // Asegúrate que la F esté en mayúscula si el archivo es "Footer.jsx"
 import HeroSectionServices from "../components/HeroSectionServices";
 import FotoServices from "../assets/images/services/services.jpg";
 
 const Services = () => {
   return (
-    <div className="min-h-screen bg-gray-50 mb-20">
+    <div className="min-h-screen flex flex-col bg-gray-50">
       {/* Header */}
       <Navbar />
-      
+
       {/* Main Content */}
-      <main>
+      <main className="flex-grow">
         {/* Sección Hero para Servicios */}
-        <section className="mb-20">
+        <section>
           <HeroSectionServices />
         </section>
 
@@ -23,7 +23,7 @@ const Services = () => {
           <OurServices />
         </section>
 
-        {/* Foto */}
+        {/* Imagen adicional */}
         <section className="mb-20">
           <div className="flex justify-center items-center mb-10">
             <img
@@ -35,12 +35,12 @@ const Services = () => {
             />
           </div>
         </section>
-
-        {/* Footer */}
-        <section>
-          <Footer />
-        </section>
       </main>
+
+      {/* Footer */}
+      <footer className="w-full">
+        <Footer />
+      </footer>
     </div>
   );
 };
