@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const BancaLinea = ({ isVisible, onClose }) => {
+  const navigate = useNavigate();
+
   if (!isVisible) return null;
 
   return (
@@ -19,13 +22,14 @@ const BancaLinea = ({ isVisible, onClose }) => {
             Cancelar
           </button>
           <button
-            onClick={() => {
-              window.location.href = "../../pages/registrationForm.jsx"; 
-            }}
-            className="bg-teal-800 text-white font-semibold px-4 py-2 rounded-md"
-          >
-            Ir a Login
-          </button>
+  onClick={() => {
+    alert("Botón presionado");
+    navigate("/login");
+  }}
+  className="bg-teal-800 text-white font-semibold px-4 py-2 rounded-md"
+>
+  Ir a Login
+</button>
         </div>
       </div>
     </div>

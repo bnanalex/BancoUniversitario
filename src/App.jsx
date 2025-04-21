@@ -1,22 +1,22 @@
-import React from "react"
-{/*import RegistrationForm from "./pages/registrationForm"*/}
-import Home  from "./pages/Home"
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+// Páginas
+import Home from "./pages/Home";
+import Form from "./pages/registrationForm";
+
 function App() {
   return (
-    <>
-      {/* <Menu /> */}
-      {/* <AboutUs /> */}
-      {/* <OurServices /> */}
+    <Router>
+      <Routes>
+        {/* Página principal */}
+        <Route path="/" element={<Home />} />
 
-      {/*<Navbar />*/}
-      {/*<Ob />
-      <RegistrationForm />
-      <Footer />*/}
-      {/*<Home />*/}
-      {/*<Services />*/}
-      <Home />
-    </>
-  )
+        {/* Página de Login/Registro */}
+        <Route path="/login" element={<Form />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
