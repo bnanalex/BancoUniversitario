@@ -5,7 +5,6 @@ import AboutUs from "../components/aboutUs" ;
 import Ob from "../components/Objetives"
 import MisionVision from "../components/MisionVision";
 import OurServices from "../components/OurServices"
-import Footer from "../components/footer"
 const Home = () => {
     return (
       <div className="min-h-screen bg-gray-50">
@@ -25,9 +24,9 @@ const Home = () => {
           </section>
 
           {/* Sección Servicios */}
-          <section className="mb-5">
+          {/* <section className="mb-5">
             <OurServices />
-          </section>
+          </section> */}
 
           {/* Sección Sobre Nosotros */}
           <section className="mb-20">
@@ -43,17 +42,7 @@ const Home = () => {
             <section className="mb-20">
             <MisionVision/>
           </section>
-  
-          {/* Sección Contacto */}
-
-
-          {/* Sección Contacto */}
-    
-          
         </main>
-        <section>
-            <Footer />
-          </section>
       </div>
     );
   };
