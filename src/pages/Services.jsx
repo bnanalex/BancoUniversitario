@@ -37,10 +37,6 @@ const Services = () => {
         </section>
       </main>
 
-      {/* Footer */}
-      <footer className="w-full">
-        <Footer />
-      </footer>
     </div>
   );
 };
