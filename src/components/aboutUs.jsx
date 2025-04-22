@@ -19,17 +19,17 @@ function AboutUs() {
             />
           </div>
           <div className="md:w-2/3 p-4 md:p-8">
-            <p className="mb-4 text-base md:text-3xl">
+            <p className="mb-4 text-base md:text-lg">
               En el Banco Universidad, somos un equipo comprometido a ofrecer
               servicios financieros eficientes y de calidad, tanto a través de
               canales digitales como presenciales.
             </p>
-            <p className="mb-4 text-base md:text-3xl">
+            <p className="mb-4 text-base md:text-lg">
               Promovemos transferencias sin comisión, depósitos y retiros
               seguros, y brindamos educación financiera mediante charlas y
               talleres.
             </p>
-            <p className="text-base md:text-3xl">
+            <p className="mb-4 text-base md:text-lg">
               Además, contamos con alianzas estratégicas para ofrecer
               beneficios exclusivos como descuentos y becas. Nos
               caracterizamos por nuestra cultura de innovación y mejora

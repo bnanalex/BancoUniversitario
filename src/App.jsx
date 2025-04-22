@@ -1,25 +1,24 @@
-import Footer from "./components/footer"
-import AboutUs from "./pages/aboutUs"
-import Menu from "./components/Menu"
-import OurServices from "./pages/OurServices"
+import React from "react"
+{/*import RegistrationForm from "./pages/registrationForm"*/ }
+import Home from "./pages/Home"
 import RegistrationForm from "./pages/registrationForm"
-import Navbar from "./components/NavBar"
-import Ob from "./components/Objetives"
-import Home  from "./pages/Home"
-
-
+import Services from "./pages/Services"
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
+import Navbar from "./components/NavBar" 
 function App() {
   return (
     <>
-      {/* <Menu /> */}
-      {/* <AboutUs /> */}
-      {/* <OurServices /> */}
+      <Router>
+        <main>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home/>} />
+            <Route path="/banca-en-linea" element={<RegistrationForm />} />
+            <Route path="/servicios" element={<Services />} />
+          </Routes>
+        </main>
+      </Router>
 
-      {/*<Navbar />*/}
-      {/*<Ob />
-      <RegistrationForm />
-      <Footer />*/}
-      <Home />
     </>
   )
 }
