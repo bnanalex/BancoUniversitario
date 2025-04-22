@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../components/NavBar";
 import OurServices from "../components/OurServices";
-import Footer from "../components/footer"; // Asegúrate que la F esté en mayúscula si el archivo es "Footer.jsx"
+import Footer from "../components/footer"; 
 import HeroSectionServices from "../components/HeroSectionServices";
 import FotoServices from "../assets/images/services/services.jpg";
 

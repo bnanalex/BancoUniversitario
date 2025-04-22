@@ -18,7 +18,7 @@ const Navbar = () => {
             className="w-8 h-8 cursor-pointer hover:opacity-80 transition-opacity"
             onClick={() => setIsMenuOpen(true)}
           />
-          <Link to="/">
+          <Link to={"/"}>
           <img
             src={Logo}
             alt="Logo Banco Universitario"
