@@ -31,7 +31,6 @@ const Objetivos = () => {
       <div className="space-y-8">
         {objetivos.map((objetivo, index) => (
           <div key={index} className="flex items-start gap-6">
-            {/* Contenedor del icono */}
             <div className="w-16 flex-shrink-0">
               <img 
                 src={`/src/assets/${objetivo.icono}`} 
@@ -40,9 +39,8 @@ const Objetivos = () => {
               />
             </div>
             
-            {/* Contenido del objetivo */}
             <div className="flex-1">
-              <p className="text-gray-600 leading-relaxed text-justify">
+              <p className="text-gray-600 leading-relaxed text-justify text-lg">
                 {objetivo.contenido}
               </p>
             </div>
