@@ -1,26 +1,27 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
-// Páginas
-import Home from "./pages/Home";
-import Form from "./pages/registrationForm";
-import Services from "./pages/Services";
-
+import React from "react"
+import Home from "./pages/Home"
+import RegistrationForm from "./pages/registrationForm"
+import Services from "./pages/Services"
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
+import Navbar from "./components/NavBar"
+import Footer from "./components/footer"
 function App() {
   return (
-    <Router>
-      <Routes>
-        {/* Página principal */}
-        <Route path="/" element={<Home />} />
+    <>
+      <Router>
+        <main>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home/>} />
+            <Route path="/banca-en-linea" element={<RegistrationForm />} />
+            <Route path="/servicios" element={<Services />} />
+          </Routes>
+          <Footer/>
+        </main>
+      </Router>
 
-        {/* Página de Login/Registro */}
-        <Route path="/login" element={<Form />} />
-
-        {/* Página de Servicio */}
-        <Route path="/services" element={<Services />} />
-      </Routes>
-    </Router>
-  );
+    </>
+  )
 }
 
 export default App;
