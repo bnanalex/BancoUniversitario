@@ -42,7 +42,7 @@ const Objetivos = () => {
             
             {/* Contenido del objetivo - Ancho completo en móvil */}
             <div className="flex-1 w-full">
-              <p className="text-gray-600 leading-relaxed md:text-justify">
+              <p className="text-gray-600 leading-relaxed text-justify">
                 {objetivo.contenido}
               </p>
             </div>
