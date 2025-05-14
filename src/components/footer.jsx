@@ -2,6 +2,7 @@ import React from 'react';
 import logo from '../assets/images/home/Logo letras blancas.png';
 import facebookIcon from '../assets/icons/facebook-brands.svg';
 import instagramIcon from '../assets/icons/instagram-brands.svg';
+import twitterIcon from '../assets/icons/square-x-twitter-brands.svg';
 
 function Footer() {
   return (
@@ -29,6 +30,10 @@ function Footer() {
           </a>
           <a href="https://www.instagram.com/bancouniversitariove" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center md:justify-start">
             <img src={instagramIcon} alt="Instagram" className="h-5 mr-1" />
+            @bancouniversitariove
+          </a>
+          <a href="https://x.com/bancouniversitariove" className="flex items-center">
+            <img src={twitterIcon} alt="Twitter" className="h-6 mr-2" />
             @bancouniversitariove
           </a>
         </div>

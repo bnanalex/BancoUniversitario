@@ -38,15 +38,15 @@ function Menu({ onClose }) {
       <div className="mt-8 text-sm border-t border-white/20 pt-4">
         <p className="text-xl font-semibold text-center mb-4">Redes Sociales:</p>
         <div className="flex flex-col items-start space-y-2">
-          <a href="#" className="flex items-center">
+          <a href="https://www.facebook.com/bancouniversitariove" className="flex items-center">
             <img src={facebookIcon} alt="Facebook" className="h-6 mr-2" />
             @bancouniversitariove
           </a>
-          <a href="#" className="flex items-center">
+          <a href="https://www.instagram.com/bancouniversitariove" className="flex items-center">
             <img src={instagramIcon} alt="Instagram" className="h-6 mr-2" />
             @bancouniversitariove
           </a>
-          <a href="#" className="flex items-center">
+          <a href="https://x.com/bancouniversitariove" className="flex items-center">
             <img src={twitterIcon} alt="Twitter" className="h-6 mr-2" />
             @bancouniversitariove
           </a>
