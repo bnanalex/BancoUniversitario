@@ -38,7 +38,7 @@ function RegistrationForm() {
             last_name: surname,
             email: email,
             password: password,
-            birth_date: "2020-05-18T14:40:04.341364Z",
+            birth_date: birthdate,
             // gender: gender,
             phone_number: `${phoneCode}${phoneNumber}`,
         };
