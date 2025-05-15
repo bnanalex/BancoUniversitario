@@ -25,14 +25,17 @@ function Menu({ onClose }) {
       </div>
 
         <div className="space-y-4">
+          <Link to="/profile" onClick={onClose} className="bg-white text-teal-800 w-full py-2 rounded-md font-semibold hover:bg-gray-200 block text-center">
+            Perfil
+          </Link>
+          <Link to="/contactos" onClick={onClose} className="bg-white text-teal-800 w-full py-2 rounded-md font-semibold hover:bg-gray-200 block text-center">
+            Lista de Contactos
+          </Link>
+          <Link to="/banca-landing" onClick={onClose} className="bg-white text-teal-800 w-full py-2 rounded-md font-semibold hover:bg-gray-200 block text-center">
+            Movimientos
+          </Link>
           <Link to="/" onClick={onClose} className="bg-white text-teal-800 w-full py-2 rounded-md font-semibold hover:bg-gray-200 block text-center">
-            Inicio
-          </Link>
-          <Link to="/banca-en-linea" onClick={onClose} className="bg-white text-teal-800 w-full py-2 rounded-md font-semibold hover:bg-gray-200 block text-center">
-            Banca En Linea
-          </Link>
-          <Link to="/servicios" onClick={onClose} className="bg-white text-teal-800 w-full py-2 rounded-md font-semibold hover:bg-gray-200 block text-center">
-            Servicios
+            Cerrar Sesion
           </Link>
         </div>
       <div className="mt-8 text-sm border-t border-white/20 pt-4">

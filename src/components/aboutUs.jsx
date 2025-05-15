@@ -18,7 +18,7 @@ function AboutUs() {
               className="w-full md:h-[71vh] object-cover"
             />
           </div>
-          <div className="md:w-2/3 p-4 md:p-8">
+          <div className="md:w-2/3 text-justify p-4 md:p-8">
             <p className="mb-4 text-base md:text-lg">
               En el Banco Universidad, somos un equipo comprometido a ofrecer
               servicios financieros eficientes y de calidad, tanto a través de
@@ -35,6 +35,12 @@ function AboutUs() {
               caracterizamos por nuestra cultura de innovación y mejora
               continua para satisfacer las necesidades de nuestros clientes.
             </p>
+            <section className="text-center p-6 bg-white">
+              <h2 className="text-2xl font-semibold mb-2 text-gray-800">¡Únete al Banco Universitario y disfruta de una experiencia bancaria segura!</h2>
+              <button className="bg-teal-400 hover:bg-teal-500 text-white font-medium py-2 px-4 rounded">
+              Registrarse
+              </button>
+            </section>
           </div>
         </div>
       </div>

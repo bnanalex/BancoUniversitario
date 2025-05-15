@@ -7,7 +7,7 @@ const MisionVision = () => {
   return (
     <div className="bg-gray-100 py-[0px] px-[0px] md:px-[0px] flex flex-col gap-[0px]">
       {/* Sección de Texto */}
-      <div className="bg-teal-800 py-[40px] px-[20px] flex flex-col items-start gap-6 md:py-[60px] md:px-[130px] md:flex-row md:justify-center">
+      <div className="bg-teal-800 py-[40px] px-[20px] flex flex-col items-start gap-6 md:py-[60px] md:px-[130px] md:flex-row md:justify-center md:items-center">
         {/* Sección Misión */}
         <div className="flex flex-col items-center w-full md:max-w-[400px]">
           <div className="flex flex-col items-center mb-4">
@@ -20,7 +20,7 @@ const MisionVision = () => {
               Misión
             </h2>
           </div>
-          <p className="text-white text-base font-semibold leading-relaxed max-w-[600px] text-justify pl-[15px] md:text-[1.25rem] md:pl-[30px]">
+          <p className="text-white text-base font-semibold leading-relaxed max-w-[600px] text-justify px-[15px] md:text-[1.25rem] md:px-[30px]">
             Somos una confiable institución financiera comprometida con los estudiantes universitarios,
             brindando soluciones financieras ágiles y eficientes. Nuestra misión es facilitar la gestión
             de sus recursos y contribuir al crecimiento económico y personal de nuestros clientes.
@@ -39,7 +39,7 @@ const MisionVision = () => {
               Visión
             </h2>
           </div>
-          <p className="text-white text-base font-semibold leading-relaxed max-w-[600px] text-justify pl-[15px] md:text-[1.25rem] md:pl-[30px]">
+          <p className="text-white text-base font-semibold leading-relaxed max-w-[600px] text-justify px-[15px] md:text-[1.25rem] md:px-[30px]">
             Queremos ser la principal opción financiera para estudiantes universitarios en el país.
             Deseamos ser reconocidos por nuestros servicios innovadores, la calidad de atención al cliente
             y nuestro compromiso con la educación y el desarrollo social.

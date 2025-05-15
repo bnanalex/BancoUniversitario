@@ -25,22 +25,24 @@ const Objetivos = () => {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
+    <div className="max-w-4xl mx-auto px-10 py-8">
       <h1 className="text-3xl font-bold text-gray-800 mb-8 text-center">¿Cuáles son nuestros objetivos?</h1>
       
       <div className="space-y-8">
         {objetivos.map((objetivo, index) => (
-          <div key={index} className="flex items-start gap-6">
-            <div className="w-16 flex-shrink-0">
+          <div key={index} className="flex flex-col md:flex-row items-start gap-4 md:gap-6">
+            {/* Contenedor del icono - Centrado en móvil */}
+            <div className="md:w-16 w-full flex-shrink-0">
               <img 
                 src={`/src/assets/${objetivo.icono}`} 
                 alt="Icono objetivo"
-                className="w-12 h-12 object-contain"
+                className="w-12 h-12 object-contain mx-auto md:mx-0"
               />
             </div>
             
-            <div className="flex-1">
-              <p className="text-gray-600 leading-relaxed text-justify text-lg">
+            {/* Contenido del objetivo - Ancho completo en móvil */}
+            <div className="flex-1 w-full">
+              <p className="text-gray-600 leading-relaxed text-justify">
                 {objetivo.contenido}
               </p>
             </div>
