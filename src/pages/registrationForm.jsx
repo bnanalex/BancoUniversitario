@@ -38,7 +38,7 @@ function RegistrationForm() {
             last_name: surname,
             email: email,
             password: password,
-            birth_date: birthdate,
+            birth_date: new Date(birthdate),
             // gender: gender,
             phone_number: `${phoneCode}${phoneNumber}`,
         };
