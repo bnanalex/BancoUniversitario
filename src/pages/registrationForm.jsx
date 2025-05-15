@@ -1,15 +1,98 @@
 import React, { useState } from 'react';
 import sideImage from '../assets/images/registerLogin/man-showing-calculator.jpg';
 import logo from '../assets/images/home/logo-banco-universitario-no-background.png';
+import { registerUser, loginUser } from '../api/modules/auth';
 
 function RegistrationForm() {
     const [activeTab, setActiveTab] = useState('register');
+    const [cedulaType, setCedulaType] = useState('V');
+    const [cedula, setCedula] = useState('');
+    const [name, setName] = useState('');
+    const [surname, setSurname] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [birthdate, setBirthdate] = useState('');
+    const [gender, setGender] = useState('Seleccionar');
+    const [phoneCode, setPhoneCode] = useState('+58');
+    const [phoneNumber, setPhoneNumber] = useState('');
+    const [registrationError, setRegistrationError] = useState(null);
+    const [registrationSuccess, setRegistrationSuccess] = useState(false);
+
+    const [loginEmail, setLoginEmail] = useState('');
+    const [loginPassword, setLoginPassword] = useState('');
+    const [loginError, setLoginError] = useState(null);
 
     const handleTabChange = (tab) => {
         setActiveTab(tab);
+        setLoginError(null); // Limpiar el error al cambiar de tab
+        setRegistrationError(null); // Limpiar el error al cambiar de tab
+        setRegistrationSuccess(false); // Limpiar el mensaje de éxito al cambiar de tab
+    };
+    const handleRegistration = async (event) => {
+        event.preventDefault(); // Previene la recarga de la página
+
+        const userData = {
+            //cedula: `${cedulaType}-${cedula}`,
+            document_number: cedula,
+            first_name: name,
+            last_name: surname,
+            email: email,
+            password: password,
+            birth_date: birthdate,
+            // gender: gender,
+            phone_number: `${phoneCode}${phoneNumber}`,
+        };
+
+        try {
+            const response = await registerUser(userData); // Ajusta el endpoint según tu API
+            console.log("response", response);
+            if (response.ok === 1) {
+                setRegistrationSuccess(true);
+                setRegistrationError(null);
+                // Puedes redirigir al usuario a otra página o mostrar un mensaje de éxito
+                console.log('Registro exitoso:', response);
+            } else {
+                setRegistrationError(response.message.text || 'Error al registrar el usuario.');
+                setRegistrationSuccess(false);
+                console.error('Error en el registro:', response);
+            }
+        } catch (error) {
+            setRegistrationError('Ocurrió un error al comunicarse con el servidor.');
+            setRegistrationSuccess(false);
+            console.error('Error en la petición de registro:', error);
+        }
     };
 
-    return (
+    const handleLogin = async (event) => {
+        event.preventDefault();
+
+        const loginData = {
+            email: loginEmail,
+            password: loginPassword,
+        };
+
+        try {
+            const response = await loginUser(loginData);
+            console.log("response inicio sesión", response);
+            if (response.ok === 1) {
+                // Inicio de sesión exitoso
+                setLoginError(null);
+                // Aquí puedes guardar el token de acceso, la información del usuario,
+                // y redirigir al usuario a la página principal de tu aplicación.
+                console.log('Inicio de sesión exitoso:', response);
+                // Ejemplo de redirección (necesitas usar tu sistema de rutas):
+                // window.location.href = '/dashboard';
+            } else {
+                setLoginError(response.message.text || 'Correo o contraseña incorrectos.');
+                console.error('Error al iniciar sesión:', response);
+            }
+        } catch (error) {
+            setLoginError('Ocurrió un error al comunicarse con el servidor.');
+            console.error('Error en la petición de inicio de sesión:', error);
+        }
+    };
+
+   return (
         <div className="bg-gray-100 py-12">
             <div className="container mx-auto px-4">
                 <div className="bg-white rounded-lg shadow-teal-500 shadow-lg overflow-hidden md:flex">
@@ -51,7 +134,38 @@ function RegistrationForm() {
                         </div>
 
                         {activeTab === 'register' && (
-                            <div className="grid grid-cols-1 gap-4">
+                            <form onSubmit={handleRegistration} className="grid grid-cols-1 gap-4">
+                                <label htmlFor="cedula" className="block text-gray-700 text-sm font-bold mb-1">
+                                    Cédula
+                                </label>
+                                <div className="grid grid-cols-5 gap-2 items-start">
+                                    <div className="col-span-1">
+                                        <div className="relative">
+                                            <select
+                                                id="cedulaType"
+                                                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline text-sm"
+                                                value={cedulaType}
+                                                onChange={(e) => setCedulaType(e.target.value)}
+                                            >
+                                                <option>V</option>
+                                                <option>E</option>
+                                            </select>
+                                            <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                                                <svg className="h-5 w-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="col-span-4">
+                                        <input
+                                            type="number"
+                                            id="cedula"
+                                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline text-sm"
+                                            placeholder="Cedula"
+                                            value={cedula}
+                                            onChange={(e) => setCedula(e.target.value)}
+                                        />
+                                    </div>
+                                </div>
                                 <div>
                                     <label htmlFor="name" className="block text-gray-700 text-sm font-bold mb-1">
                                         Nombre
@@ -61,6 +175,8 @@ function RegistrationForm() {
                                         id="name"
                                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline text-sm"
                                         placeholder="Ejemplo"
+                                        value={name}
+                                        onChange={(e) => setName(e.target.value)}
                                     />
                                 </div>
                                 <div>
@@ -72,6 +188,8 @@ function RegistrationForm() {
                                         id="surname"
                                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline text-sm"
                                         placeholder="Chavez"
+                                        value={surname}
+                                        onChange={(e) => setSurname(e.target.value)}
                                     />
                                 </div>
                                 <div>
@@ -84,10 +202,10 @@ function RegistrationForm() {
                                             id="email"
                                             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pr-8 text-sm"
                                             placeholder="your@yourmail.com"
+                                            value={email}
+                                            onChange={(e) => setEmail(e.target.value)}
                                         />
-                                        <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
-                                            <svg className="h-5 w-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                                        </div>
+                                        {/* Icono de validación de correo (puedes implementarlo) */}
                                     </div>
                                 </div>
                                 <div>
@@ -100,10 +218,10 @@ function RegistrationForm() {
                                             id="password"
                                             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pr-8 text-sm"
                                             placeholder="********"
+                                            value={password}
+                                            onChange={(e) => setPassword(e.target.value)}
                                         />
-                                        <div className="absolute inset-y-0 right-0 flex items-center px-2 cursor-pointer">
-                                            <svg className="h-5 w-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7 1.274 4.057-1.178 8.995-4.904 12.955-3.726 3.96-7.516 6.904-12.029 6.904-4.513 0-8.304-2.944-12.03-6.905z"></path></svg>
-                                        </div>
+                                        {/* Icono de mostrar/ocultar contraseña (puedes implementarlo) */}
                                     </div>
                                 </div>
                                 <div>
@@ -115,10 +233,10 @@ function RegistrationForm() {
                                             type="date"
                                             id="birthdate"
                                             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pr-8 text-sm"
+                                            value={birthdate}
+                                            onChange={(e) => setBirthdate(e.target.value)}
                                         />
-                                        <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
-                                            <svg className="h-5 w-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                                        </div>
+                                        {/* Icono de calendario (puedes implementarlo) */}
                                     </div>
                                 </div>
                                 <div>
@@ -129,6 +247,8 @@ function RegistrationForm() {
                                         <select
                                             id="gender"
                                             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pr-8 text-sm"
+                                            value={gender}
+                                            onChange={(e) => setGender(e.target.value)}
                                         >
                                             <option>Seleccionar</option>
                                             <option>Masculino</option>
@@ -148,8 +268,11 @@ function RegistrationForm() {
                                             <select
                                                 id="phoneCode"
                                                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline text-sm"
+                                                value={phoneCode}
+                                                onChange={(e) => setPhoneCode(e.target.value)}
                                             >
                                                 <option>+58</option>
+                                                {/* Puedes agregar más códigos de país */}
                                             </select>
                                             <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
                                                 <svg className="h-5 w-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
@@ -165,27 +288,49 @@ function RegistrationForm() {
                                             id="phoneNumber"
                                             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline text-sm"
                                             placeholder="0414-XXXXXXX"
+                                            value={phoneNumber}
+                                            onChange={(e) => setPhoneNumber(e.target.value)}
                                         />
                                     </div>
                                 </div>
                                 <div className="mt-6">
-                                    <button className="bg-teal-500 text-white py-2 px-4 rounded-md font-semibold
-                                    hover:bg-teal-600 active:bg-teal-600 transition duration-200 focus:outline-none focus:shadow-outline text-sm md:text-base w-full">
+                                    <button
+                                        type="submit"
+                                        className="bg-teal-500 text-white py-2 px-4 rounded-md font-semibold
+                                        hover:bg-teal-600 active:bg-teal-600 transition duration-200 focus:outline-none focus:shadow-outline text-sm md:text-base w-full"
+                                    >
                                         Registrarse
                                     </button>
-                                    <button className="bg-gray-300 text-gray-700 py-2 px-4 rounded-md font-semibold focus:outline-none focus:shadow-outline
-                                    hover:bg-gray-200 active:bg-gray-300 transition duration-200 text-sm md:text-base w-full mt-2">
+                                    <button
+                                        type="button"
+                                        className="bg-gray-300 text-gray-700 py-2 px-4 rounded-md font-semibold focus:outline-none focus:shadow-outline
+                                        hover:bg-gray-200 active:bg-gray-300 transition duration-200 text-sm md:text-base w-full mt-2"
+                                        onClick={() => {
+                                            // Lógica para cancelar o limpiar el formulario
+                                            console.log('Cancelar registro');
+                                        }}
+                                    >
                                         Cancelar
                                     </button>
                                 </div>
+                                {registrationSuccess && (
+                                    <p className="mt-4 text-green-500 text-sm text-center">
+                                        Registro exitoso!
+                                    </p>
+                                )}
+                                {registrationError && (
+                                    <p className="mt-4 text-red-500 text-sm text-center">
+                                        Error: {registrationError}
+                                    </p>
+                                )}
                                 <p className="mt-4 text-gray-500 text-xs text-center">
                                     Al crear esta cuenta, aceptas nuestros <a href="#" className="text-teal-500">Términos de uso</a> y <a href="#" className="text-teal-500">Política de privacidad</a>.
                                 </p>
-                            </div>
+                            </form>
                         )}
 
                         {activeTab === 'login' && (
-                            <div className="grid grid-cols-1 gap-4">
+                            <form onSubmit={handleLogin} className="grid grid-cols-1 gap-4">
                                 <div>
                                     <label htmlFor="loginEmail" className="block text-gray-700 text-sm font-bold mb-1">
                                         Correo
@@ -195,6 +340,8 @@ function RegistrationForm() {
                                         id="loginEmail"
                                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline text-sm"
                                         placeholder="your@yourmail.com"
+                                        value={loginEmail}
+                                        onChange={(e) => setLoginEmail(e.target.value)}
                                     />
                                 </div>
                                 <div>
@@ -206,6 +353,8 @@ function RegistrationForm() {
                                         id="loginPassword"
                                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline text-sm"
                                         placeholder="********"
+                                        value={loginPassword}
+                                        onChange={(e) => setLoginPassword(e.target.value)}
                                     />
                                 </div>
                                 <div className="mt-6">
@@ -216,7 +365,7 @@ function RegistrationForm() {
                                         ¿Olvidaste tu <a href="#" className="text-teal-500">contraseña</a>?
                                     </p>
                                 </div>
-                            </div>
+                            </form>
                         )}
                     </div>
                     <div className="hidden lg:w-1/2 md:w-1/2  lg:block md:block">
