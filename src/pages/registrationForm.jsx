@@ -46,16 +46,16 @@ function RegistrationForm() {
         try {
             const response = await registerUser(userData); // Ajusta el endpoint según tu API
             console.log("response", response);
-            if (response.ok === 1) {
-                setRegistrationSuccess(true);
-                setRegistrationError(null);
-                // Puedes redirigir al usuario a otra página o mostrar un mensaje de éxito
-                console.log('Registro exitoso:', response);
-            } else {
-                setRegistrationError(response.message.text || 'Error al registrar el usuario.');
-                setRegistrationSuccess(false);
-                console.error('Error en el registro:', response);
-            }
+            // if (response.ok === 1) {
+            //     setRegistrationSuccess(true);
+            //     setRegistrationError(null);
+            //     // Puedes redirigir al usuario a otra página o mostrar un mensaje de éxito
+            //     console.log('Registro exitoso:', response);
+            // } else {
+            //     setRegistrationError(response.message.text || 'Error al registrar el usuario.');
+            //     setRegistrationSuccess(false);
+            //     console.error('Error en el registro:', response);
+            // }
         } catch (error) {
             setRegistrationError('Ocurrió un error al comunicarse con el servidor.');
             setRegistrationSuccess(false);
@@ -74,18 +74,18 @@ function RegistrationForm() {
         try {
             const response = await loginUser(loginData);
             console.log("response inicio sesión", response);
-            if (response.ok === 1) {
-                // Inicio de sesión exitoso
-                setLoginError(null);
-                // Aquí puedes guardar el token de acceso, la información del usuario,
-                // y redirigir al usuario a la página principal de tu aplicación.
-                console.log('Inicio de sesión exitoso:', response);
-                // Ejemplo de redirección (necesitas usar tu sistema de rutas):
-                // window.location.href = '/dashboard';
-            } else {
-                setLoginError(response.message.text || 'Correo o contraseña incorrectos.');
-                console.error('Error al iniciar sesión:', response);
-            }
+            // if (response.ok === 1) {
+            //     // Inicio de sesión exitoso
+            //     setLoginError(null);
+            //     // Aquí puedes guardar el token de acceso, la información del usuario,
+            //     // y redirigir al usuario a la página principal de tu aplicación.
+            //     console.log('Inicio de sesión exitoso:', response);
+            //     // Ejemplo de redirección (necesitas usar tu sistema de rutas):
+            //     // window.location.href = '/dashboard';
+            // } else {
+            //     setLoginError(response.message.text || 'Correo o contraseña incorrectos.');
+            //     console.error('Error al iniciar sesión:', response);
+            // }
         } catch (error) {
             setLoginError('Ocurrió un error al comunicarse con el servidor.');
             console.error('Error en la petición de inicio de sesión:', error);
