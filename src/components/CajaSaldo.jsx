@@ -14,12 +14,15 @@ const CajaSaldo = () => {
       <div className="w-150 bg-white p-4 rounded-4xl font-medium text-center shadow-xl border border-[#085F63] flex flex-col items-center">
         {/* Sección Cuenta */}
         <div className="w-full px-[0px] md:px-0 mb-2">
-          <h1 className="text-teal-800 text-4xl underline underline-offset-15 font-semibold mb-4 w-full text-center items-center">Banca en Linea</h1>
+          {/* Titulo "Banca en Linea" */}
+          <h1 className="text-teal-800 text-4xl underline underline-offset-15 font-bold mb-4 w-full text-center items-center">Banca en Linea</h1>
         </div>
         <div className="w-full px-[0px] md:px-0 mb-2">
+          {/* Tipo de Cuenta */}
           <h2 className="text-teal-800 text-lg font-semilight text-center">Cuenta Corriente</h2>
         </div>
         <div className="w-full px-[0px] md:px-0">
+          {/* ID de Cuenta */}
           <p className="text-gray-500 text-md font-light tracking-wide text-center">54321098765432109876</p>
         </div>
         
@@ -32,7 +35,7 @@ const CajaSaldo = () => {
                 <input
                   type={showBalance ? "text" : "password"}
                   id="saldoCuenta"
-                  className="w-48 py-5 px-4 text-teal-800 leading-tight focus:outline-none text-3xl text-center underline underline-offset-5 font-semilight bg-transparent"
+                  className="w-48 py-5 px-4 text-teal-800 leading-tight focus:outline-none text-3xl text-center underline underline-offset-4 font-semilight bg-transparent"
                   value={showBalance ? "3.500,00" : "••••••••"}
                   readOnly
                 />
@@ -50,6 +53,7 @@ const CajaSaldo = () => {
             </div>
           </div>
           <div className="w-full px-[0px] md:px-0 mt-2">
+            {/* Texto "Disponible" */}
             <h2 className="text-gray-500 text-2xl font-semilight text-center">Disponible</h2>
           </div>
         </div>

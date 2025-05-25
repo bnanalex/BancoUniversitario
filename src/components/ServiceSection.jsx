@@ -20,14 +20,14 @@ const ServicesSection = () => {
       <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row justify-center items-center md:items-start gap-10 md:gap-20">
         {/* Contenido de texto */}
         <div className="w-full md:w-1/2 max-w-xl">
-          <h2 className="text-3xl font-bold text-teal-800 mb-8 text-center md:text-left">
+          <h2 className="text-3xl font-bold text-teal-800 underline underline-offset-15 mb-8 text-center md:text-center">
             Nuestros Servicios
           </h2>
           <div className="grid gap-5">
             {services.map((service, index) => (
               <button
                 key={index}
-                className="w-full bg-white text-gray-800 p-4 rounded-xl font-medium text-base md:text-lg shadow-md border border-[#085F63] flex items-center gap-4 text-left hover:bg-[#f0fdfa] hover:-translate-y-0.5 transition duration-200"
+                className="w-full bg-white text-gray-800 p-4 rounded-2xl font-medium text-base md:text-lg shadow-md border border-[#085F63] flex items-center gap-4 text-left hover:bg-[#f0fdfa] hover:-translate-y-0.5 transition duration-200"
               >
                 <img src={service.icon} alt={`Icono ${index}`} className="w-10 h-10 shrink-0" />
                 <span className="flex-1">{service.text}</span>
@@ -41,7 +41,7 @@ const ServicesSection = () => {
           <img
             src={Services}
             alt="Servicios"
-            className="w-full h-auto object-cover rounded-xl shadow-lg"
+            className="w-full h-auto object-cover rounded-2xl shadow-lg"
             loading="lazy"
           />
         </div>

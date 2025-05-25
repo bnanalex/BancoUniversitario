@@ -3,6 +3,9 @@ import HeroSection from "../components/HeroSectionHome"
 import ServicesSection from "../components/ServiceSection"
 import CajaSaldo from "../components/CajaSaldo"
 import ContactsMenu from "../components/ContactsMenu"
+import ContactInfo from "../components/ContactInfo"
+import DeleteContactDialog from "../components/DeleteContactDialog"
+import DeletedContact from "../components/DeletedContact"
 import AboutUs from "../components/aboutUs" ;
 import Ob from "../components/Objetives"
 import MisionVision from "../components/MisionVision";
@@ -25,14 +28,29 @@ const Home = () => {
             <ServicesSection />
           </section>
 
-          {/* Sección Caja Saldo (Debe ir en la Banca en linea) */}
+          {/* Sección Caja Saldo (Debe ir dentro de la Banca en linea) */}
           {/* <section className="mb-0">
             <CajaSaldo />
           </section> */}
 
-          {/* Sección Barra de Trasferencia (Debe ser accesible desde el menú lateral al iniciar sesión) */}
+          {/* Menú de Contactos (Debe ser accesible desde el menú lateral al iniciar sesión) */}
           {/* <section className="mb-5">
             <ContactsMenu />
+          </section > */}
+
+          {/* Información del Contacto (Debe ser accesible desde el menú de contactos al seleccionar el contacto y hacer clic en "ver contacto") */}
+          {/* <section className="mb-5">
+            <ContactInfo />
+          </section > */}
+
+          {/* Menú de Eliminar Contacto (Debe ser accesible desde el menú de contactos al seleccionar el contacto y hacer clic en "eliminar") */}
+          {/* <section className="mb-5">
+            <DeleteContactDialog />
+          </section > */}
+
+          {/* Menú de Contacto Eliminado (Debe ser accesible desde el menú de Elinimar contacto al hacer clic en "Aceptar") */}
+          {/* <section className="mb-5">
+            <DeletedContact />
           </section > */}
 
           {/* Sección Sobre Nosotros */}
