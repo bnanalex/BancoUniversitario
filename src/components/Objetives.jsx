@@ -26,7 +26,7 @@ const Objetivos = () => {
 
   return (
     <div className="max-w-4xl mx-auto px-10 py-8">
-      <h1 className="text-3xl font-bold text-gray-800 mb-8 text-center">¿Cuáles son nuestros objetivos?</h1>
+      <h1 className="text-3xl font-bold underline underline-offset-15 text-gray-800 mb-8 text-center">¿Cuáles son nuestros objetivos?</h1>
       
       <div className="space-y-8">
         {objetivos.map((objetivo, index) => (

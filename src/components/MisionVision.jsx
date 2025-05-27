@@ -16,7 +16,7 @@ const MisionVision = () => {
               alt="Icono misión" 
               className="w-16 h-16 mb-4 object-contain"
             />
-            <h2 className="text-white text-[1.75rem] font-bold leading-normal md:text-[2rem]">
+            <h2 className="text-white text-[1.75rem] font-bold underline underline-offset-15 leading-normal md:text-[2rem]">
               Misión
             </h2>
           </div>
@@ -35,7 +35,7 @@ const MisionVision = () => {
               alt="Icono visión" 
               className="w-16 h-16 mb-4 object-contain"
             />
-            <h2 className="text-white text-[1.75rem] font-bold leading-normal md:text-[2rem]">
+            <h2 className="text-white text-[1.75rem] font-bold underline underline-offset-15 leading-normal md:text-[2rem]">
               Visión
             </h2>
           </div>
