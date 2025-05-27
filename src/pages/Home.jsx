@@ -4,6 +4,7 @@ import ServicesSection from "../components/ServiceSection"
 import AboutUs from "../components/aboutUs" ;
 import Ob from "../components/Objetives"
 import MisionVision from "../components/MisionVision";
+import ProfileOverlay from "../components/ProfileOverlay"
 import OurServices from "../components/OurServices"
 const Home = () => {
     return (
@@ -16,6 +17,11 @@ const Home = () => {
           {/* Sección imagen principal */}
           <section className="mb-0">
             <HeroSection />
+          </section>
+
+          {/* Sección imagen principal */}
+          <section className="mb-20">
+            <ProfileOverlay />
           </section>
 
           {/* Sección Servicios */}
