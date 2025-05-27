@@ -16,7 +16,7 @@ const Comprobante = () => {
         <div className="flex flex-col items-center mt-5">
         <img 
           src={Task} 
-          alt="Contacto Eliminado Exitosamente" 
+          alt="Comprobante" 
           className="w-30 h-25"
           />    
         </div>
