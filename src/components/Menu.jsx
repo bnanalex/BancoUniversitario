@@ -34,6 +34,10 @@ function Menu({ onClose }) {
           <Link to="/servicios" onClick={onClose} className="bg-white text-teal-800 w-full py-2 rounded-md font-semibold hover:bg-gray-200 block text-center">
             Servicios
           </Link>
+          <Link to="/servicios" onClick={onClose} className="bg-white text-teal-800 w-full py-2 rounded-md font-semibold hover:bg-gray-200 block text-center">
+            Servicios
+          </Link>
+          <>  </>
         </div>
       <div className="mt-8 text-sm border-t border-white/20 pt-4">
         <p className="text-xl font-semibold text-center mb-4">Redes Sociales:</p>
