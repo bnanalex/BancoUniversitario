@@ -56,9 +56,9 @@ const Home = () => {
           </section >*/}
 
           {/* Menú de Contacto Eliminado (Debe ser accesible desde el menú de Elinimar contacto al hacer clic en "Aceptar") */}
-          <section className="mb-5">
+          {/* <section className="mb-5">
             <TransactionSucess />
-          </section >
+          </section > */}
 
           {/* Menú de Comprobante (Debe ser accesible desde la seccion de movimientos dentro de la banca en linea, al hacer clic en "Ver Más" en un determinado movimiento) */}
           {/*<section className="mb-5">
