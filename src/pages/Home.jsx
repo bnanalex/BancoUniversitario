@@ -4,7 +4,7 @@ import ServicesSection from "../components/ServiceSection";
 import AboutUs from "../components/AboutUs"; // Cambiado a mayúscula
 import Objetives from "../components/Objetives"; // Nombre exacto
 import MisionVision from "../components/MisionVision";
-import Transferencia from "../components/Transferencia"; // Nombre corregido
+import Transferencia from "../components/ProfileOverlay"; // Nombre corregido
 const Home = () => {
   return (
     <div className="min-h-screen bg-gray-50">

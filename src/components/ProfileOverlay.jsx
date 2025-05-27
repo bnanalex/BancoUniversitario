@@ -14,7 +14,7 @@ const ProfileOverlay = () => {
 
   const [isEditing, setIsEditing] = useState(false);
   const [newPassword, setNewPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = '';
 
   // Guardar cambios
   const handleSave = () => {
@@ -43,15 +43,16 @@ const ProfileOverlay = () => {
   };
 
   return (
-    <div className="bg-white p-8 rounded-lg shadow-lg max-w-md mx-auto">
+    // Added border-2 and border-[#085F63] for the border around the entire component
+    <div className="bg-white p-8 rounded-lg shadow-lg max-w-md mx-auto border-2 border-[#085F63]">
       <h2 className="text-3xl font-semibold text-center text-teal-800 mb-6">
         Perfil
       </h2>
 
       <div className="space-y-4">
-        {/* Nombre y Número de Cuenta */}
-        <div className="flex flex-col border-b pb-4">
-          <span className="text-xl font-bold text-gray-900">{profile.name}</span>
+        {/* Nombre y Número de Cuenta - Centered */}
+        <div className="flex flex-col border-b pb-4 text-center"> {/* Added text-center here */}
+          <span className="text-xl font-bold" style={{ color: '#085F63' }}>{profile.name}</span>
           <span className="text-gray-600">{profile.accountNumber}</span>
         </div>
 
