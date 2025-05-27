@@ -1,5 +1,6 @@
 import React from 'react';
 import image from '../assets/images/home/who-we-are.jpg';
+import { Link } from 'react-router-dom';
 
 function AboutUs() {
   return (
@@ -37,9 +38,12 @@ function AboutUs() {
             </p>
             <section className="text-center p-6 bg-white">
               <h2 className="text-2xl font-semibold mb-2 text-gray-800">¡Únete al Banco Universitario y disfruta de una experiencia bancaria segura!</h2>
+              <Link to={"/banca-en-linea"}>
               <button className="bg-teal-400 hover:bg-teal-500 text-white font-medium py-2 px-4 rounded">
               Registrarse
               </button>
+              </Link>
+
             </section>
           </div>
         </div>
