@@ -30,6 +30,9 @@ function Menu({ onClose }) {
       </div>
 
         <div className="space-y-4">
+          <Link to="/dashboard" onClick={onClose} className="bg-white text-teal-800 w-full py-2 rounded-md font-semibold hover:bg-gray-200 block text-center">
+            Inicio
+          </Link>
           <Link to="/profile" onClick={onClose} className="bg-white text-teal-800 w-full py-2 rounded-md font-semibold hover:bg-gray-200 block text-center">
             Perfil
           </Link>
