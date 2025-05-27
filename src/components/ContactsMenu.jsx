@@ -2,15 +2,15 @@ import React, { useState, useEffect } from 'react';
 import Logo from '../assets/images/home/logo-banco-universitario-no-background.png';
 import Check from "../assets/icons/check-svg.svg";
 
-const contacts = [
-  { icon: Check, text: "Mary Sofia" },
-  { icon: Check, text: "Alexis UCLA" },
-  { icon: Check, text: "Luis" },
-  { icon: Check, text: "Chela Cafetín" },
-  { icon: Check, text: "Prof. Jorge Chiquín" }
-];
+// const contacts = [
+//   { icon: Check, text: "Mary Sofia" },
+//   { icon: Check, text: "Alexis UCLA" },
+//   { icon: Check, text: "Luis" },
+//   { icon: Check, text: "Chela Cafetín" },
+//   { icon: Check, text: "Prof. Jorge Chiquín" }
+// ];
 
-const ContactsMenu = () => {
+const ContactsMenu = ({contacts}) => {
   const [selectedContact, setSelectedContact] = useState(null);
 
   // Manejar clics fuera de los contactos
@@ -56,7 +56,8 @@ const ContactsMenu = () => {
         </div>
         <div className="w-85 h-100 bg-white p-0 font-medium text-center border border-[#085F63] flex flex-col items-center m-0">
           <div className="mt-4 grid gap-5">
-            {contacts.map((check, index) => (
+            
+            {contacts?.length > 0 ? contacts.map((check, index) => (
               <button
                 key={index}
                 onClick={(e) => handleContactClick(index, e)}
@@ -79,7 +80,10 @@ const ContactsMenu = () => {
                     }`}
                 />
               </button>
-            ))}
+            ))
+            : (
+              <p className="text-gray-500 text-lg">No hay contactos disponibles</p>
+            )}
           </div>
         </div>
         <div className="bg-teal-400 rounded-b-4xl py-[25px] px-[59px] font-medium flex flex-row items-center justify-center gap-6">

@@ -8,6 +8,11 @@ import { Link } from 'react-router-dom';
 
 function Menu({ onClose }) {
   const menuRef = useRef(null);
+  function logout() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    window.location.href = '/';
+  }
   return (
     <div
       ref={menuRef}
@@ -28,13 +33,13 @@ function Menu({ onClose }) {
           <Link to="/profile" onClick={onClose} className="bg-white text-teal-800 w-full py-2 rounded-md font-semibold hover:bg-gray-200 block text-center">
             Perfil
           </Link>
-          <Link to="/contactos" onClick={onClose} className="bg-white text-teal-800 w-full py-2 rounded-md font-semibold hover:bg-gray-200 block text-center">
+          <Link to="/contacts" onClick={onClose} className="bg-white text-teal-800 w-full py-2 rounded-md font-semibold hover:bg-gray-200 block text-center">
             Lista de Contactos
           </Link>
           <Link to="/banca-landing" onClick={onClose} className="bg-white text-teal-800 w-full py-2 rounded-md font-semibold hover:bg-gray-200 block text-center">
             Movimientos
           </Link>
-          <Link to="/" onClick={onClose} className="bg-white text-teal-800 w-full py-2 rounded-md font-semibold hover:bg-gray-200 block text-center">
+          <Link to="/" onClick={logout} className="bg-white text-teal-800 w-full py-2 rounded-md font-semibold hover:bg-gray-200 block text-center">
             Cerrar Sesion
           </Link>
         </div>

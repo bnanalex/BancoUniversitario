@@ -10,14 +10,14 @@ export const apiHttp = async (
   options = {},
 ) => {
 
-  // const defaultHeaders = {
-  //   'Accept': 'application/json',
-  //   'Content-Type': token ? 'application/json' : 'application/x-www-form-urlencoded',
-  //   'Authorization': token ? `Bearer ${token.replace(/['"]+/g, '')}` : '',
-  // }
+  const defaultHeaders = {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json' ,
+    'Authorization': token ? `Bearer ${token.replace(/['"]+/g, '')}` : '',
+  }
 
-  // if (!Object.prototype.hasOwnProperty.call(options, 'headers'))
-  //   options.headers = defaultHeaders
+  if (!Object.prototype.hasOwnProperty.call(options, 'headers'))
+    options.headers = defaultHeaders
 
   let serviceResponse = {}
 

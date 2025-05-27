@@ -74,6 +74,12 @@ function RegistrationForm() {
         try {
             const response = await loginUser(loginData);
             console.log("response inicio sesión", response);
+            if (response.data.jwt){
+                localStorage.setItem('token', response.data.jwt);
+                localStorage.setItem('user', JSON.stringify(response.data));
+                console.log(JSON.parse(localStorage.getItem('user')))
+                window.location.href = '/dashboard'
+            }
             // if (response.ok === 1) {
             //     // Inicio de sesión exitoso
             //     setLoginError(null);

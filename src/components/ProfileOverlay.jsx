@@ -2,15 +2,7 @@ import React, { useState } from 'react';
 
 const ProfileOverlay = () => {
   // Datos iniciales del perfil
-  const [profile, setProfile] = useState({
-    name: "Jorge Chiquin",
-    accountNumber: "54321098765432109876",
-    cedula: "12.345.678",
-    birthDate: "Enero 01, 2001",
-    email: "jorgechiquinv@gmail.com",
-    phone: "04245995961",
-    password: "**********" // Mostrará siempre 10 asteriscos
-  });
+  const [profile, setProfile] = useState(JSON.parse(localStorage.getItem('user')))
 
   const [isEditing, setIsEditing] = useState(false);
   const [newPassword, setNewPassword] = useState('');
@@ -52,15 +44,15 @@ const ProfileOverlay = () => {
       <div className="space-y-4">
         {/* Nombre y Número de Cuenta - Centered */}
         <div className="flex flex-col border-b pb-4 text-center"> {/* Added text-center here */}
-          <span className="text-xl font-bold" style={{ color: '#085F63' }}>{profile.name}</span>
-          <span className="text-gray-600">{profile.accountNumber}</span>
+          <span className="text-xl font-bold" style={{ color: '#085F63' }}>{profile.first_name} {profile.last_name}</span>
+          <span className="text-gray-600">{profile.account_number}</span>
         </div>
 
         {/* Campos estáticos */}
-        <ProfileField label="Cédula" value={profile.cedula} />
-        <ProfileField label="Fecha de nacimiento" value={profile.birthDate} />
+        <ProfileField label="Cédula" value={profile.document_number} />
+        <ProfileField label="Fecha de nacimiento" value={profile.birth_date} />
         <ProfileField label="Correo" value={profile.email} />
-        <ProfileField label="Teléfono" value={profile.phone} />
+        <ProfileField label="Teléfono" value={profile.phone_number} />
 
         {/* Campos de contraseña */}
         {!isEditing ? (

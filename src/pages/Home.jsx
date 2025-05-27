@@ -3,12 +3,12 @@ import HeroSection from "../components/HeroSectionHome";
 import ServicesSection from "../components/ServiceSection";
 import AboutUs from "../components/AboutUs"; // Cambiado a mayúscula
 import Objetives from "../components/Objetives"; // Nombre exacto
-// import CajaSaldo from "../components/CajaSaldo"
-// import ContactsMenu from "../components/ContactsMenu"
-// import ContactInfo from "../components/ContactInfo"
-// import DeleteContactDialog from "../components/DeleteContactDialog"
-// import DeletedContact from "../components/DeletedContact"
-// import Comprobante from "../components/Comprobante"
+import CajaSaldo from "../components/CajaSaldo"
+import ContactsMenu from "../components/ContactsMenu"
+import ContactInfo from "../components/ContactInfo"
+import DeleteContactDialog from "../components/DeleteContactDialog"
+import DeletedContact from "../components/DeletedContact"
+import Comprobante from "../components/Comprobante"
 import MisionVision from "../components/MisionVision";
 import Transferencia from "../components/ProfileOverlay"; // Nombre corregido
 const Home = () => {
@@ -22,9 +22,9 @@ const Home = () => {
         </section>
 
         {/* Sección Perfil */}
-        <section className="mb-20">
+        {/* <section className="mb-20">
           <Transferencia />
-        </section>
+        </section> */}
 
         {/* Sección Servicios */}
         <section className="mb-5">

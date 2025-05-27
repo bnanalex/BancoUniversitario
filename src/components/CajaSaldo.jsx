@@ -1,13 +1,27 @@
 import React, { useState } from 'react';
 import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/solid';
+import { getBalance } from '../api/modules/auth';
 
 const CajaSaldo = () => {
   const [showBalance, setShowBalance] = useState(false);
-
+  console.log("showBalance", JSON.parse(localStorage.getItem('user')));
+  const [userData, setUserData] = useState(JSON.parse(localStorage.getItem('user')) || {});
+  const [balance, setBalance] = useState();
   const toggleBalance = () => {
     setShowBalance(!showBalance);
   };
-
+  const fetchBalance = async () => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      const response = await getBalance(token);
+      setBalance(response.data.balance || '0.00');
+  }
+}
+  // Fetch balance when the component mounts
+  React.useEffect(() => {
+    fetchBalance();
+  }, []);
+  
   return (
     <div className="bg-gray-100 py-16 px-4 flex flex-col items-center">
       {/* Sección principal */}
@@ -23,7 +37,7 @@ const CajaSaldo = () => {
         </div>
         <div className="w-full px-[0px] md:px-0">
           {/* ID de Cuenta */}
-          <p className="text-gray-500 text-md font-light tracking-wide text-center">54321098765432109876</p>
+          <p className="text-gray-500 text-md font-light tracking-wide text-center">{userData.account_number}</p>
         </div>
         
         {/* Sección Saldo */}
@@ -36,7 +50,7 @@ const CajaSaldo = () => {
                   type={showBalance ? "text" : "password"}
                   id="saldoCuenta"
                   className="w-48 py-5 px-4 text-teal-800 leading-tight focus:outline-none text-3xl text-center underline underline-offset-4 font-semilight bg-transparent"
-                  value={showBalance ? "3.500,00" : "••••••••"}
+                  value={showBalance ? balance : "••••••••"}
                   readOnly
                 />
                 <button

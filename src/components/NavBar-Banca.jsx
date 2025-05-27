@@ -1,10 +1,10 @@
 import MenuIcon from '../assets/icons/menu-vr-svg.svg';
 import Logo from '../assets/images/home/logo-banco-universitario-no-background.png';
-import Menu from './Menu';
+import Menu from './Menu-Banca';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const NavbarBanca = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -26,7 +26,7 @@ const Navbar = () => {
         </div>
 
         {/* Sección derecha: Botones */}
-        <div className="flex items-center gap-2 sm:gap-4 ml-auto">
+        {/* <div className="flex items-center gap-2 sm:gap-4 ml-auto">
           <Link to={"/banca-en-linea"}>
             <button className="px-3 py-1 sm:px-4 sm:py-2 rounded-sm border border-[#085F63] text-[#085F63] 
             hover:bg-[#adced179] transition-colors text-xs sm:text-sm md:text-base">
@@ -40,7 +40,7 @@ const Navbar = () => {
               Registrar
             </button>
           </Link>
-        </div>
+        </div> */}
       </header>
 
       {/* Menú lateral condicional */}
@@ -49,4 +49,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavbarBanca;
